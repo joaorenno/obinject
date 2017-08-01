@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="electionsPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>org.obinject.sample.elections.hibernate.Election</class>
+    <class>org.obinject.sample.elections.hibernate.Senator</class>
+    <class>org.obinject.sample.elections.hibernate.Elector</class>
+    <class>org.obinject.sample.elections.hibernate.Campaigner</class>
+    <class>org.obinject.sample.elections.hibernate.Counting</class>
+    <class>org.obinject.sample.elections.hibernate.Representative</class>
+    <class>org.obinject.sample.elections.hibernate.Vote</class>
+    <class>org.obinject.sample.elections.hibernate.Party</class>
+    <class>org.obinject.sample.elections.hibernate.Candidate</class>
+    <class>org.obinject.sample.elections.hibernate.Person</class>
+    <class>org.obinject.sample.elections.hibernate.Campaign</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/elections?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="elections"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="elections"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.connection.autocommit" value="false"/>
+    </properties>
+  </persistence-unit>
+</persistence>
